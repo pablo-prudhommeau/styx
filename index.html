@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styx - Random word generator</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
+        body {
+            font-family: 'Dosis', sans-serif;
+            font-size: 1.2em;
+            margin: 0;
+            padding: 0;
+            background: #2a2a2a;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 800;
+            font-size: 3.2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wordbox {
+            margin: 30px auto 0;
+            display: block;
+            width: 300px;
+            height: 40px;
+            font-size: 30px;
+            text-align: center;
+            background: #fff;
+            border-radius: 6px;
+            color: black;
+            transition: 1s linear;
+        }
+
+        .content {
+            margin-top: 5%;
+        }
+
+        .button {
+            font-family: 'Dosis', sans-serif;
+            background: #0b7fba;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            margin: 0 auto 60px;
+            display: block;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 400;
+        }
+
+        .menu {
+            margin-top: 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu .item {
+            background: #eee;
+            border-radius: 2px;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+
+        .menu a.item {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        let words;
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const wordsUrlParam = urlParams.get('words')
+        $.get("/" + wordsUrlParam, function (data) {
+            words = data.split("\n");
+        });
+
+        function pickRandomWord() {
+            let randomWordIndex = Math.ceil(Math.random() * words.length);
+            $('.wordbox').val(words[randomWordIndex]);
+        }
+    </script>
+</head>
+<body translate="no">
+<div class="wrapper">
+    <div class="menu">
+        <a class="item" href="/?words=stones">Stones</a>
+        <a class="item" href="/?words=mars-craters">Mars craters</a>
+        <a class="item" href="/?words=stars">Stars</a>
+        <a class="item" href="/?words=constellations">Constellations</a>
+        <a class="item" href="/?words=deities-egyptian">Egyptian deities</a>
+        <a class="item" href="/?words=deities-greek">Greek deities</a>
+    </div>
+
+    <div class="content">
+        <h1>
+            <label for="wordbox">Styx</label>
+        </h1>
+        <h2>
+            Random word generator
+        </h2>
+        <form id="form">
+            <input type="text" name="wordbox" class="wordbox" id="wordbox"><br>
+            <input type="button" value="Generate" onclick="pickRandomWord();" class="button">
+        </form>
+    </div>
+</div>
+</body>
+</html>

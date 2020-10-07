@@ -50,7 +50,6 @@
             background: #fff;
             border-radius: 6px;
             color: black;
-            transition: 1s linear;
         }
 
         .content {
@@ -83,7 +82,21 @@
             background: #eee;
             border-radius: 2px;
             padding: 5px 10px;
-            margin: 5px;
+            margin: 8px;
+        }
+
+        .item-label {
+            text-align: center;
+            font-weight: 500;
+            font-size: 28px;
+        }
+
+        .item-abstract {
+            text-align: center;
+            font-weight: 200;
+            font-size: 19px;
+            color: #555;
+            font-family: 'Dancing Script', cursive;
         }
 
         .menu a.item {
@@ -96,7 +109,7 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const wordsUrlParam = urlParams.get('words')
-        $.get("/" + wordsUrlParam, function (data) {
+        $.get("/lists/" + wordsUrlParam, function (data) {
             words = data.split("\n");
         });
 
@@ -109,12 +122,30 @@
 <body translate="no">
 <div class="wrapper">
     <div class="menu">
-        <a class="item" href="/?words=stones">Stones</a>
-        <a class="item" href="/?words=mars-craters">Mars craters</a>
-        <a class="item" href="/?words=stars">Stars</a>
-        <a class="item" href="/?words=constellations">Constellations</a>
-        <a class="item" href="/?words=deities-egyptian">Egyptian deities</a>
-        <a class="item" href="/?words=deities-greek">Greek deities</a>
+        <a class="item" href="/?words=stars">
+            <div class="item-label">Stars</div>
+            <div class="item-abstract">Something with IP</div>
+        </a>
+        <a class="item" href="/?words=stones">
+            <div class="item-label">Stones</div>
+            <div class="item-abstract">Storage volume</div>
+        </a>
+        <a class="item" href="/?words=deities-greek">
+            <div class="item-label">Greek deities</div>
+            <div class="item-abstract">Software</div>
+        </a>
+        <a class="item" href="/?words=constellations">
+            <div class="item-label">Constellations</div>
+            <div class="item-abstract">Network card</div>
+        </a>
+        <a class="item" href="/?words=mars-craters">
+            <div class="item-label">Mars craters</div>
+            <div class="item-abstract">DIY project</div>
+        </a>
+        <a class="item" href="/?words=deities-egyptian">
+            <div class="item-label">Egyptian deities</div>
+            <div class="item-abstract">Musical playlist</div>
+        </a>
     </div>
 
     <div class="content">
@@ -122,7 +153,7 @@
             <label for="wordbox">Styx</label>
         </h1>
         <h2>
-            Random word generator
+            Random word generator from predefined lists
         </h2>
         <form id="form">
             <input type="text" name="wordbox" class="wordbox" id="wordbox"><br>

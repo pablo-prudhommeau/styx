@@ -112,7 +112,6 @@ buta
 butte
 byrd
 byske
-cádiz
 cairns
 calahorra
 calamar
@@ -123,16 +122,16 @@ camiri
 campbell
 campos
 can
-cañas
 canaveral
 canberra
 cangwu
 canso
 cantoura
-cartago
 capen
+cartago
 cassini
 cave
+cañas
 cefalù
 chamberlin
 changsvông
@@ -163,7 +162,6 @@ cluny
 cobalt
 coblentz
 cobres
-cólon
 conches
 concord
 cooma
@@ -177,6 +175,8 @@ cruz
 cue
 curie
 cypress
+cádiz
+cólon
 daan
 daet
 daly
@@ -273,8 +273,8 @@ gori
 graff
 green
 grindavik
-grójec
 groves
+grójec
 guaymas
 guir
 gulch
@@ -286,8 +286,8 @@ haldane
 hale
 halley
 ham
-hammaguir
 hamelin
+hammaguir
 handlová
 harad
 hargraves
@@ -345,7 +345,6 @@ jumla
 kachug
 kagoshima
 kagul
-kāid
 kaj
 kakori
 kaliningrad
@@ -403,6 +402,7 @@ kumara
 kunes
 kunowsky
 kushva
+kāid
 labria
 lachute
 laf
@@ -457,7 +457,6 @@ luzin
 lydda
 lyell
 lyot
-mädler
 madrid
 mafra
 magadi
@@ -508,10 +507,11 @@ montevallo
 morella
 moreux
 moss
-müller
 murgoo
 mut
 mutch
+mädler
+müller
 naar
 naic
 nain
@@ -662,8 +662,8 @@ say
 schaeberle
 schiaparelli
 schmidt
-schöner
 schroeter
+schöner
 sebec
 secchi
 sefadu
@@ -688,7 +688,6 @@ sitka
 sklodowska
 slipher
 smith
-sögel
 soffen
 sokol
 solano
@@ -716,6 +715,7 @@ surt
 suzhi
 swanage
 sytinskaya
+sögel
 tabor
 tabou
 taejin
@@ -786,7 +786,6 @@ uzer
 vaals
 valga
 valverde
-vätö
 vaux
 verlaine
 very
@@ -804,6 +803,7 @@ vogel
 volgograd
 voo
 voza
+vätö
 wabash
 wahoo
 wajir
@@ -852,7 +852,7 @@ zhigou
 zilair
 zir
 zongo
-žulanka
 zuni
 zunil
 zutphen
+žulanka

@@ -13,6 +13,8 @@ stages:
 
 deploy-docker:
   stage: deploy
+  before_script:
+    - for i in $(seq 1 60); do docker info >/dev/null 2>&1 && break; sleep 2; done; docker info
   script:
     - docker login -u $DOCKER_REPOSITORY_USERNAME -p $DOCKER_REPOSITORY_PASSWORD docker.nexus.nash.p1xel.fr
     - docker build -t docker.nexus.nash.p1xel.fr/styx .

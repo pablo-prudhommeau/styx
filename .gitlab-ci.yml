@@ -1,4 +1,4 @@
-image: docker:stable
+image: docker:24
 
 variables:
   DOCKER_HOST: tcp://docker:2375/
@@ -6,7 +6,7 @@ variables:
   DOCKER_TLS_CERTDIR: ""
 
 services:
-  - docker:dind
+  - docker:24-dind
 
 stages:
   - deploy
